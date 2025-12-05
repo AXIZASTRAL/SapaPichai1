@@ -19,3 +19,15 @@ tabButtons.forEach(btn => {
         }
     });
 });
+// แสดงรูปกิจกรรม
+const activityButtons = document.querySelectorAll(".activity-btn");
+const activityImage = document.getElementById("activity-image");
+
+activityButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const imgSrc = button.getAttribute("data-img");
+        activityImage.src = imgSrc;
+        activityImage.style.display = "block";
+    });
+});
+
