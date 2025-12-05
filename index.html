@@ -1,10 +1,132 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สภานักเรียน วัดพิชัยยาราม</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สภานักเรียนโรงเรียนวัดพิชัยยาราม</title>
+<style>
+    body {
+        font-family: "Sarabun", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        margin: 0 5px;
+        border: none;
+        background-color: #fff;
+        color: #4CAF50;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* แนะนำตัวสมาชิก */
+    .members-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .member {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+    }
+
+    .member img.avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .role {
+        color: #555;
+        font-size: 14px;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* กิจกรรม */
+    .activity-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .activity-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        border: 2px solid #4CAF50;
+        background-color: #fff;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .activity-btn:hover {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+    #activity-image-container {
+        text-align: center;
+    }
+
+    #activity-image {
+        max-width: 90%;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        display: none;
+    }
+
+</style>
 </head>
 <body>
 
@@ -17,118 +139,171 @@
 </header>
 
 <main>
-    <!-- แนะนำตัวสมาชิก -->
+    <!-- แนะนำตัว -->
     <section id="profile" class="tab-content active">
-        <!-- สมาชิกทั้งหมด 19 คน -->
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. นราภัทร อรุณพันธ์</h2>
-            <p class="role">ประธานนักเรียน / ฝ่ายวิชาการ</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. เกวลิน พึ่งวิริยะตน</h2>
-            <p class="role">รองประธาน / ฝ่ายประชาสัมพันธ์</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. สิรพัฒน์ เตจ๊ะ</h2>
-            <p class="role">สภานักเรียน / ฝ่ายปกครอง</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. อภิรักษ์ อินทร์หนู</h2>
-            <p class="role">สภานักเรียน / ดูแลเครื่องเสียง</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. ศศิวพร วังทอง</h2>
-            <p class="role">สภานักเรียน / เลขานุการ / หัวหน้าฝ่ายปฏิคม</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. ศิริวิมล ศิลาทอง</h2>
-            <p class="role">สภานักเรียน / ฝ่ายปฏิคม</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. อนันตชัย หนูอิ่ม</h2>
-            <p class="role">สภานักเรียน / หัวหน้าฝ่ายประชาสัมพันธ์</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. ป้อมเพชร พงศ์จินดา</h2>
-            <p class="role">หัวหน้าฝ่ายปกครอง</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. ศศลักษณ์ วรลักษณ์ภักดี</h2>
-            <p class="role">ฝ่ายปกครอง</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. ศดานนท์ วงศ์สัมฤทธิ์</h2>
-            <p class="role">ฝ่ายปกครอง</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. วีรภทร ศรีอินทร์</h2>
-            <p class="role">ฝ่ายประชาสัมพันธ์</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. นัทพงษ์ พูลเต็ม</h2>
-            <p class="role">ฝ่ายกิจกรรม</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. ณัฐภัทร ดีวัน</h2>
-            <p class="role">ฝ่ายวิชาการ</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. จิรพงศ์ ขำจริง</h2>
-            <p class="role">ฝ่ายสวัสดิการ</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. คมกริช อ่อนหล้า</h2>
-            <p class="role">ฝ่ายวิชาการ</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดช. นัฐกานต์ จบสุบิน</h2>
-            <p class="role">ฝ่ายกิจกรรม</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. ธัญญารัตน์ ทาสี</h2>
-            <p class="role">ฝ่ายเหรัญญิก</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. ศิกันตา อยู่สุข</h2>
-            <p class="role">ฝ่ายกิจกรรม</p>
-        </div>
-        <div class="member">
-            <img class="avatar" src="https://via.placeholder.com/150">
-            <h2>ดญ. มนัสนันท์ โทธานี</h2>
-            <p class="role">ฝ่ายกิจกรรม</p>
+        <div class="members-container">
+            <div class="member" style="animation-delay:0s">
+                <img class="avatar" src="https://via.placeholder.com/150" alt="member">
+                <h2>ดช. นราภัทร อรุณพันธ์</h2>
+                <p class="role">ประธานนักเรียน / ฝ่ายวิชาการ</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.1s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. เกวลิน พึ่งวิริยะตน</h2>
+                <p class="role">รองประธาน / ฝ่ายประชาสัมพันธ์</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.2s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. สิรพัฒน์ เตจ๊ะ</h2>
+                <p class="role">สภานักเรียน / ฝ่ายปกครอง</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.3s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. อภิรักษ์ อินทร์หนู</h2>
+                <p class="role">สภานักเรียน / ดูแลเครื่องเสียง</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.4s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. ศศิวพร วังทอง</h2>
+                <p class="role">สภานักเรียน / เลขานุการ หัวหน้าฝ่ายปฏิคม</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.5s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. ศิริวิมล ศิลาทอง</h2>
+                <p class="role">สภานักเรียน / ฝ่ายปฏิคม</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.6s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. อนันตชัย หนูอิ่ม</h2>
+                <p class="role">สภานักเรียน / หัวหน้าฝ่ายประชาสัมพันธ์</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.7s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. ป้อมเพชร พงศ์จินดา</h2>
+                <p class="role">หัวหน้าฝ่ายปกครอง</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.8s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. ศศลักษณ์ วรลักษณ์ภักดี</h2>
+                <p class="role">ฝ่ายปกครอง</p>
+            </div>
+
+            <div class="member" style="animation-delay:0.9s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. ศดานนท์ วงศ์สัมฤทธิ์</h2>
+                <p class="role">ฝ่ายปกครอง</p>
+            </div>
+
+            <div class="member" style="animation-delay:1s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. วีรภทร ศรีอินทร์</h2>
+                <p class="role">ฝ่ายประชาสัมพันธ์</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.1s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. นัทพงษ์ พูลเต็ม</h2>
+                <p class="role">ฝ่ายกิจกรรม</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.2s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. ณัฐภัทร ดีวัน</h2>
+                <p class="role">ฝ่ายวิชาการ</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.3s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. จิรพงศ์ ขำจริง</h2>
+                <p class="role">ฝ่ายสวัสดิการ</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.4s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. คมกริช อ่อนหล้า</h2>
+                <p class="role">ฝ่ายวิชาการ</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.5s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดช. นัฐกานต์ จบสุบิน</h2>
+                <p class="role">ฝ่ายกิจกรรม</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.6s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. ธัญญารัตน์ ทาสี</h2>
+                <p class="role">ฝ่ายเหรัญญิก</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.7s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. ศิกันตา อยู่สุข</h2>
+                <p class="role">ฝ่ายกิจกรรม</p>
+            </div>
+
+            <div class="member" style="animation-delay:1.8s">
+                <img class="avatar" src="https://via.placeholder.com/150">
+                <h2>ดญ. มนัสนันท์ โทธานี</h2>
+                <p class="role">ฝ่ายกิจกรรม</p>
+            </div>
         </div>
     </section>
 
-    <!-- แท็บกิจกรรม -->
+    <!-- กิจกรรม -->
     <section id="activities" class="tab-content">
-        <h2>กิจกรรมของสภานักเรียน</h2>
-        <ul class="activity-list">
-            <li>🗑️ ขยะแลกแต้ม</li>
-            <li>📝 ฝากบอก</li>
-            
-        </ul>
+        <h2>กิจกรรมของสภา</h2>
+
+        <div class="activity-buttons">
+            <button class="activity-btn" data-img="https://via.placeholder.com/400x250?text=ขยะแลกแต้ม">🗑️ ขยะแลกแต้ม</button>
+            <button class="activity-btn" data-img="https://via.placeholder.com/400x250?text=กิจกรรมศิลปะ">🎨 กิจกรรมศิลปะ</button>
+            <button class="activity-btn" data-img="https://via.placeholder.com/400x250?text=กีฬา">🏀 กีฬา</button>
+            <button class="activity-btn" data-img="https://via.placeholder.com/400x250?text=กิจกรรมดนตรี">🎵 กิจกรรมดนตรี</button>
+        </div>
+
+        <div id="activity-image-container">
+            <img id="activity-image" src="" alt="กิจกรรม">
+        </div>
     </section>
 </main>
 
-<script src="script.js"></script>
+<script>
+    // แท็บสลับ
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tab = button.dataset.tab;
+
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+        });
+    });
+
+    // แสดงรูปกิจกรรม
+    const activityButtons = document.querySelectorAll(".activity-btn");
+    const activityImage = document.getElementById("activity-image");
+
+    activityButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const imgSrc = button.getAttribute("data-img");
+            activityImage.src = imgSrc;
+            activityImage.style.display = "block";
+        });
+    });
+</script>
+
 </body>
 </html>
-
