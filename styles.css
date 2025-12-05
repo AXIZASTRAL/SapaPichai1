@@ -169,3 +169,18 @@ main {
   transition: transform 0.3s;
 }
 
+/* โลโก้มุมบนขวา */
+.header-logo {
+    position: absolute; /* วางแบบ absolute ภายใน header */
+    top: 10px;          /* ระยะห่างจากบน */
+    right: 20px;        /* ระยะห่างจากขวา */
+    width: 50px;        /* ขนาดโลโก้ ปรับได้ตามต้องการ */
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header-logo:hover {
+    transform: scale(1.1); /* ขยายเมื่อเอาเมาส์วาง */
+}
+
